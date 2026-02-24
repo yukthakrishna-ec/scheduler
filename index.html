@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scheduler</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="manifest" href="manifest.json">
 </head>
 
-<body class="bg-purple-900 text-white min-h-screen flex">
+<body class="bg-purple-900 text-white min-h-screen flex flex-col md:flex-row">
 
   <!-- Sidebar -->
   <aside class="w-64 bg-purple-800 p-10 hidden md:block">
@@ -20,14 +21,14 @@
   </aside>
 
   <!-- Main Content -->
-  <main class="flex-1 p-20">
+  <main class="flex-1 p-6 md:p-20">
 
     <h2 class="text-3xl font-semibold mb-2">Yooo!!🤘</h2>
     <p class="text-purple-400 mb-8" id="currentDate"></p>
 
     <!-- Add Task Section -->
     <div class="bg-purple-800 p-9 rounded-xl shadow-lg mb-8">
-      <div class="flex flex-col md:flex-row gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
 
         <input 
           id="taskInput"
@@ -78,3 +79,4 @@
 </body>
 
 </html>
+
