@@ -116,32 +116,25 @@ function checkReminders() {
   const currentTime = now.toTimeString().slice(0, 5);
 
   tasks.forEach(task => {
-    const isToday = task.dueDate === currentDate || task.repeat === "daily";
+    const isToday =
+      task.repeat === "daily" ||
+      task.dueDate === currentDate;
 
     if (
       isToday &&
       task.time === currentTime &&
       !task.notified
     ) {
-      new Notification("⏰ Reminder", {
-        body: task.text
-      });
+      alert("⏰ Reminder!\n\n" + task.text);
 
       task.notified = true;
 
-      if (task.repeat === "daily") {
-        setTimeout(() => {
-          task.notified = false;
-          saveTasks();
-        }, 60000);
-      }
+      saveTasks();
     }
   });
-
-  saveTasks();
 }
 
-setInterval(checkReminders, 60000);
+setInterval(checkReminders, 10000);
 
 function clearInputs() {
   document.getElementById("taskInput").value = "";
@@ -152,4 +145,5 @@ function clearInputs() {
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("service-worker.js")
     .then(() => console.log("Service Worker Registered"));
+
 }
