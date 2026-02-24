@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scheduler</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-purple-900 text-white min-h-screen flex">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-purple-800 p-10 hidden md:block">
+    <h1 class="text-2xl font-bold mb-8">📅 Scheduler</h1>
+    <nav class="space-y-4">
+      <button onclick="filterTasks('all')" class="block hover:text-purple-400">All Tasks</button>
+      <button onclick="filterTasks('pending')" class="block hover:text-purple-400">Pending</button>
+      <button onclick="filterTasks('completed')" class="block hover:text-purple-400">Completed</button>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-20">
+
+    <h2 class="text-3xl font-semibold mb-2">Yooo!!🤘</h2>
+    <p class="text-purple-400 mb-8" id="currentDate"></p>
+
+    <!-- Add Task Section -->
+    <div class="bg-purple-800 p-9 rounded-xl shadow-lg mb-8">
+      <div class="flex flex-col md:flex-row gap-4">
+
+        <input 
+          id="taskInput"
+          type="text"
+          placeholder="Enter task..."
+          class="flex-1 p-3 rounded-lg bg-purple-700 focus:outline-none"
+        >
+
+        <input 
+          id="dueDate"
+          type="date"
+          class="p-3 rounded-lg bg-purple-700"
+        >
+        <input 
+  id="taskTime"
+  type="time"
+  class="p-3 rounded-lg bg-purple-700"
+>
+
+<select id="repeat" class="p-3 rounded-lg bg-purple-700">
+  <option value="none">One-time</option>
+  <option value="daily">Daily</option>
+</select>
+
+        <select id="priority" class="p-3 rounded-lg bg-purple-700">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+
+        <button 
+          onclick="addTask()"
+          class="bg-purple-900 px-6 py-3 rounded-lg hover:bg-gray-600"
+        >
+          Add
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Task List -->
+    <div id="taskList" class="space-y-4"></div>
+
+  </main>
+
+<script src="script.js"></script>
+<link rel="manifest" href="manifest.json">
+</body>
+</html>
