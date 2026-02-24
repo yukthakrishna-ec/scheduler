@@ -1,0 +1,15 @@
+{
+  "name": "YOO!!",
+  "short_name": "Scheduler",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#111827",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/747/747310.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
